@@ -3,7 +3,7 @@ terraform {
 
   required_providers {
     aws = {
-      source  = "hasicorp/aws"
+      source  = "hashicorp/aws"
       version = "3.39.0"
     }
   }
@@ -20,7 +20,6 @@ resource "aws_s3_bucket" "my-test-bucket" {
   tags = {
     Name        = "My bucket"
     Environment = "Dev"
-    ManageBy    = "Terraform"
-    UpdatedAt   = "2021-05-09"
+    Manageby    = "Terraform"
   }
 }
