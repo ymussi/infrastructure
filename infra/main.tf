@@ -1,3 +1,14 @@
+terraform {
+  required_version = "0.15.3"
+  
+  required_providers {
+    aws = {
+      source = "hasicorp/aws"
+      version = "3.39.0"
+    }
+  }
+}
+
 provider "aws" {
   region = "us-east-1"
 }
