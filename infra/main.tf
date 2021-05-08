@@ -14,14 +14,14 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "my-test-bucket" {
-  bucket = "my-tf-test-bucket-mussibrsp"
+  bucket = "bucket-mussibrsp"
   acl    = "private"
 
   tags = {
     Name        = "My bucket"
     Environment = "Dev"
     ManageBy    = "Terraform"
-    UpdatedAt   = "2021-05-09:14:10"
+    UpdatedAt   = "2021-05-09:14:58"
     Owner       = "Yuri Mussi"
   }
 }
