@@ -21,6 +21,6 @@ resource "aws_s3_bucket" "my-test-bucket" {
     Name        = "My bucket"
     Environment = "Dev"
     ManageBy    = "Terraform"
-    UpdatedAt = "2021-05-09:14:04"
+    UpdatedAt   = "2021-05-09:14:04"
   }
 }
