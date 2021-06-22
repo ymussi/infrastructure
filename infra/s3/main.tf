@@ -1,5 +1,5 @@
 terraform {
-  required_version = "0.15.3"
+  required_version = "1.0.0"
 
   required_providers {
     aws = {
@@ -10,18 +10,12 @@ terraform {
 }
 
 provider "aws" {
-  region = "us-east-1"
+  region  = var.aws_region
+  profile = var.aws_profile
 }
 
 resource "aws_s3_bucket" "my-test-bucket" {
-  bucket = "bucket-mussibrsp"
-  acl    = "private"
-
-  tags = {
-    Name        = "My bucket"
-    Environment = "Dev"
-    ManageBy    = "Terraform"
-    UpdatedAt   = "2021-05-09:14:58"
-    Owner       = "Yuri Mussi"
-  }
+  bucket = var.bucket_name
+  acl    = var.bucket_acl
+  tags   = var.bucket_tags
 }
