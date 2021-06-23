@@ -13,6 +13,13 @@ terraform {
       version = "0.7.1"
     }
   }
+
+  backend "s3" {
+    bucket  = "tfstate-407187023185"
+    key     = "dev/remote-state/terraform.tfstate"
+    region  = "us-east-1"
+    profile = "terraform"
+  }
 }
 
 provider "aws" {

@@ -1,3 +1,5 @@
+data "aws_caller_identity" "current" {}
+
 locals {
 
   common_tags = {
@@ -8,7 +10,7 @@ locals {
     Owner       = var.owner
   }
 
-  example_file = "example/data.json"
-
   content_type = "application/json"
+
+  bucket_name = "tfstate-${data.aws_caller_identity.current.account_id}"
 }
