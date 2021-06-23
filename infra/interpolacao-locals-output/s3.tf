@@ -1,5 +1,12 @@
-resource "aws_s3_bucket" "my-test-bucket" {
-  bucket = var.bucket_name
+resource "aws_s3_bucket" "this" {
+  bucket = "${random_pet.bucket.id}-${var.environment}"
   acl    = var.bucket_acl
-  tags   = var.bucket_tags
+  tags   = local.common_tags
+}
+
+resource "aws_s3_bucket_object" "this" {
+  bucket = aws_s3_bucket.this.bucket
+  key    = local.example_file
+  source = local.example_file
+  etag   = filemd5(local.example_file)
 }

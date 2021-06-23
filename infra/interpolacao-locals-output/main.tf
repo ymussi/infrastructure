@@ -6,6 +6,16 @@ terraform {
       source  = "hashicorp/aws"
       version = "3.39.0"
     }
+
+    random = {
+      source  = "hashicorp/random"
+      version = "3.1.0"
+    }
+
+    time = {
+      source  = "hashicorp/time"
+      version = "0.7.1"
+    }
   }
 }
 
