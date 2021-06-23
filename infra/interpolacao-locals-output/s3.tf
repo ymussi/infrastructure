@@ -5,8 +5,9 @@ resource "aws_s3_bucket" "this" {
 }
 
 resource "aws_s3_bucket_object" "this" {
-  bucket = aws_s3_bucket.this.bucket
-  key    = local.example_file
-  source = local.example_file
-  etag   = filemd5(local.example_file)
+  bucket       = aws_s3_bucket.this.bucket
+  key          = local.example_file
+  source       = local.example_file
+  etag         = filemd5(local.example_file)
+  content_type = local.content_type
 }

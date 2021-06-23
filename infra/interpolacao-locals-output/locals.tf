@@ -8,4 +8,6 @@ locals {
   }
 
   example_file = "example/data.json"
+
+  content_type = "application/json"
 }
